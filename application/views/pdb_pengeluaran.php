@@ -24,6 +24,7 @@
 					<th>Perubahan Inventori</th>
 					<th>Ekspor Barang dan Jasa </th>
 					<th>Dikurangi Impor Barang dan Jasa </th>
+					<th>Diskrepansi Statistik</th>
 	          </tr>
 	        </thead>
 
@@ -36,7 +37,8 @@
      			echo "<td>".$value->pmtb_bruto."</td>";
      			echo "<td>".$value->perubahan_inventori."</td>";
      			echo "<td>".$value->ekspor_barangjasa."</td>";
-     			echo "<td>".$value->impor_barangjasa."</td></tr>";
+     			echo "<td>".$value->impor_barangjasa."</td>";
+     			echo "<td>".$value->diskrepansi_statistik1."</td></tr>";
 		     	} ?>
 	        </tbody>
 	      </table>

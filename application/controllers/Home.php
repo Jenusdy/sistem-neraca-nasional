@@ -84,4 +84,18 @@ class Home extends CI_Controller {
 		$this->load->view('upload_data');
 		$this->load->view('template/footer');
 	}
+
+	public function proses_data_pdb_pengeluaran(){
+		$data = array(	'tahun' 				=> $this->input->post('tahun') ,
+						'konsumsi_ruta' 		=> $this->input->post('konsumsi_rumah_tangga'),
+						'konsumsi_LNPRT'		=> $this->input->post('konsumsi_lnprt'),
+						'konsumsi_pemerintah'	=> $this->input->post('konsumsi_pemerintah'),
+						'pmtb_bruto'			=> $this->input->post('pmtb'),
+						'perubahan_inventori'	=> $this->input->post('perubahan_inventori'),
+						'ekspor_barangjasa'		=> $this->input->post('eskpor_barang_jasa'),
+						'impor_barangjasa'		=> $this->input->post('impor_barang_jasa'),
+						'diskrepansi_statistik1'=> $this->input->post('diskrepansi_statistik')
+					);
+		echo json_encode($data);
+	}
 }
