@@ -6,13 +6,13 @@
 		        	  <div class="row">
 					    <form class="col s12">
 					      	<div class="row">
-					        	<div class="input-field col s6">
-					          		<input placeholder="123456789" id="first_name" type="text" class="validate">
-					          		<label for="first_name">First Name</label>
+					        	<div class="input-field col s12">
+					          		<input placeholder="2015" id="first_name" type="text" class="validate">
+					          		<label for="first_name">Tahun</label>
 					        	</div>
 					        	<div class="input-field col s6">
 					          		<input placeholder="123456789" id="first_name" type="text" class="validate">
-					          		<label for="first_name">First Name</label>
+					          		<label for="first_name">Pertanian, Kehutanan dan Perikanan</label>
 					        	</div>
 					        	<div class="input-field col s6">
 					          		<input placeholder="123456789" id="first_name" type="text" class="validate">

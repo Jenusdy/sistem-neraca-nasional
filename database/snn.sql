@@ -2,8 +2,8 @@
 -- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Nov 26, 2018 at 11:53 AM
+-- Host: 127.0.0.1
+-- Generation Time: Nov 26, 2018 at 12:21 PM
 -- Server version: 10.1.36-MariaDB
 -- PHP Version: 7.2.11
 
@@ -36,19 +36,20 @@ CREATE TABLE `pdb_pengeluaran` (
   `pmtb_bruto` double NOT NULL,
   `perubahan_inventori` double NOT NULL,
   `ekspor_barangjasa` double NOT NULL,
-  `impor_barangjasa` double NOT NULL
+  `impor_barangjasa` double NOT NULL,
+  `diskrepansi_statistik1` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `pdb_pengeluaran`
 --
 
-INSERT INTO `pdb_pengeluaran` (`tahun`, `konsumsi_ruta`, `konsumsi_LNPRT`, `konsumsi_pemerintahan`, `pmtb_bruto`, `perubahan_inventori`, `ekspor_barangjasa`, `impor_barangjasa`) VALUES
-(2010, 3786062.9, 72758.9, 618178, 2127840.7, 129094.6, 1667917.8, 1537719.8),
-(2011, 3977288.6, 76790.3, 652291.7, 2316359.1, 118207.3, 1914267.9, 1768821.9),
-(2012, 4195787.6, 81918.6, 681819, 2527728.8, 174183.1, 1945063.7, 1910299.5),
-(2013, 4421721.3, 88617.5, 729059.6, 2661311.1, 149136.6, 2026119.7, 1945867),
-(2014, 4649072.3, 99636.3, 743470.6, 2770963.4, 162852.6, 2046739.9, 1988537.9);
+INSERT INTO `pdb_pengeluaran` (`tahun`, `konsumsi_ruta`, `konsumsi_LNPRT`, `konsumsi_pemerintahan`, `pmtb_bruto`, `perubahan_inventori`, `ekspor_barangjasa`, `impor_barangjasa`, `diskrepansi_statistik1`) VALUES
+(2010, 3786062.9, 72758.9, 618178, 2127840.7, 129094.6, 1667917.8, 1537719.8, 0),
+(2011, 3977288.6, 76790.3, 652291.7, 2316359.1, 118207.3, 1914267.9, 1768821.9, 1252.2),
+(2012, 4195787.6, 81918.6, 681819, 2527728.8, 174183.1, 1945063.7, 1910299.5, 30882.1),
+(2013, 4421721.3, 88617.5, 729059.6, 2661311.1, 149136.6, 2026119.7, 1945867, 28094.9),
+(2014, 4649072.3, 99636.3, 743470.6, 2770963.4, 162852.6, 2046739.9, 1988537.9, 83918.5);
 
 -- --------------------------------------------------------
 
@@ -127,6 +128,16 @@ INSERT INTO `pdb_produksi_hkonstan` (`tahun`, `pertanian`, `pertambangan`, `indu
 (2012, 1039440.7, 771561.6, 1697787.2, 84393, 6329.8, 728226.4, 1067911.5, 284662.6, 228232.6, 316278.7, 280896.1, 229254.2, 116293.3, 282235.3, 232704.3, 78380.1, 115675.4, 166820.6),
 (2013, 1083141.8, 785016.3, 1774097.3, 88805.1, 6587.1, 772719.6, 1118207, 308521.2, 243748.3, 349150.2, 306432.2, 244237.5, 125490.7, 288963.3, 251784.6, 84518.4, 123088.8, 203684.3),
 (2014, 1128448, 789329.7, 1856310.6, 93755.9, 6788, 826615.6, 1172362.6, 333190.9, 258161, 384129.9, 321525.5, 256440.2, 137795.3, 296145, 267633.3, 91287.8, 134070.1, 214126.2);
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `pdb_pengeluaran`
+--
+ALTER TABLE `pdb_pengeluaran`
+  ADD PRIMARY KEY (`tahun`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
