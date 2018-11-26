@@ -55,7 +55,6 @@
 					          		<label for="first_name">First Name</label>
 					        	</div>
 					      	</div>
-
 					    </form>
 					  </div>
 		        </div>
