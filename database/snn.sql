@@ -2,8 +2,8 @@
 -- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Nov 26, 2018 at 12:21 PM
+-- Host: localhost
+-- Generation Time: Nov 27, 2018 at 01:56 PM
 -- Server version: 10.1.36-MariaDB
 -- PHP Version: 7.2.11
 
@@ -137,6 +137,18 @@ INSERT INTO `pdb_produksi_hkonstan` (`tahun`, `pertanian`, `pertambangan`, `indu
 -- Indexes for table `pdb_pengeluaran`
 --
 ALTER TABLE `pdb_pengeluaran`
+  ADD PRIMARY KEY (`tahun`);
+
+--
+-- Indexes for table `pdb_produksi_hberlaku`
+--
+ALTER TABLE `pdb_produksi_hberlaku`
+  ADD PRIMARY KEY (`tahun`);
+
+--
+-- Indexes for table `pdb_produksi_hkonstan`
+--
+ALTER TABLE `pdb_produksi_hkonstan`
   ADD PRIMARY KEY (`tahun`);
 COMMIT;
 
