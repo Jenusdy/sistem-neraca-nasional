@@ -7,11 +7,13 @@
     <link type="text/css" rel="stylesheet" href="<?php echo base_url('assets/css/leaflet.css')?>">
     <link type="text/css" rel="stylesheet" href="<?php echo base_url('assets/css/data-table.css')?>">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/data-table.material.min.css');?>">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/sweet-alert.css'); ?>">
 
     <script type="text/javascript" src="<?php echo base_url('assets/js/jquery.min.js');?>"></script>
     <script type="text/javascript" src="<?php echo base_url('assets/js/d3.min.js');?>"></script>
     <script type="text/javascript" src="<?php echo base_url('assets/js/materialize.min.js');?>"></script>
     <script type="text/javascript" src="<?php echo base_url('assets/js/data-table.js');?>"></script>
     <script type="text/javascript" src="<?php echo base_url('assets/js/leaflet.js')?>"></script>
+    <script type="text/javascript" src="<?php echo base_url('assets/js/sweet-alert.min.js');?>"></script>
   </head>
   <body>

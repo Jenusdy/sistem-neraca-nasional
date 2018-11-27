@@ -76,26 +76,66 @@ class Home extends CI_Controller {
 		$this->load->view('template/footer');
 	}
 
-	public function upload_data(){
-		$header['page'] = 'Upload Data';
 
-		$this->load->view('template/header',$header);
-		$this->load->view('template/navbar');
-		$this->load->view('upload_data');
-		$this->load->view('template/footer');
-	}
+	public function insert_data_pdb_pengeluaran(){
+		if($this->Model_home->check_tahun($this->input->post('tahun'),'pdb_pengeluaran')){
+			$this->session->set_flashdata('status_data_sudah_ada', 'Data pada tahun tersebut sudah ada didalam database');
+			redirect('Home/input_data_pdb_pengeluaran');
+		}
 
-	public function proses_data_pdb_pengeluaran(){
 		$data = array(	'tahun' 				=> $this->input->post('tahun') ,
 						'konsumsi_ruta' 		=> $this->input->post('konsumsi_rumah_tangga'),
 						'konsumsi_LNPRT'		=> $this->input->post('konsumsi_lnprt'),
-						'konsumsi_pemerintah'	=> $this->input->post('konsumsi_pemerintah'),
+						'konsumsi_pemerintahan'	=> $this->input->post('konsumsi_pemerintah'),
 						'pmtb_bruto'			=> $this->input->post('pmtb'),
 						'perubahan_inventori'	=> $this->input->post('perubahan_inventori'),
 						'ekspor_barangjasa'		=> $this->input->post('eskpor_barang_jasa'),
 						'impor_barangjasa'		=> $this->input->post('impor_barang_jasa'),
 						'diskrepansi_statistik1'=> $this->input->post('diskrepansi_statistik')
 					);
-		echo json_encode($data);
+		if($this->Model_home->insert_data_pdb_pengeluaran($data)){
+			$this->session->set_flashdata('status_insert_data_berhasil', 'Insert Data PDB Pengeluaran Berhasil');
+		}else{
+			$this->session->set_flashdata('status_insert_data_gagal', 'Insert Data PDB Pengeluaran Gagal');
+		}
+
+		redirect('Home/input_data_pdb_pengeluaran');
+	}
+
+
+	public function insert_data_pdb_produksi_harga_konstan(){
+		if($this->Model_home->check_tahun($this->input->post('tahun'),'pdb_produksi_hkonstan')){
+			$this->session->set_flashdata('status_data_sudah_ada', 'Data pada tahun tersebut sudah ada didalam database');
+			redirect('Home/input_data_pdb_produksi_harga_konstan');
+		}		
+
+		$data = array(	'tahun'						=> $this->input->post('tahun'),
+						'pertanian'					=> $this->input->post('colA'),
+						'pertambangan'				=> $this->input->post('colB'),
+						'industri_pengolahan'		=> $this->input->post('colC'),
+						'listrik_gas'				=> $this->input->post('colD'),
+						'air'						=> $this->input->post('colE'),
+						'konstruksi'				=> $this->input->post('colF'),
+						'perdagangan'				=> $this->input->post('colG'),
+						'transportasi_pergudangan' 	=> $this->input->post('colH'),
+						'akomodasi_makanminum'		=> $this->input->post('colI'),
+						'informasi_komunikasi'		=> $this->input->post('colJ'),
+						'jasa_keuangan'				=> $this->input->post('colK'),
+						'real_estate'				=> $this->input->post('colL'),
+						'jasa_perusahaan'			=> $this->input->post('colM'),
+						'administrasi_pemerintahan'	=> $this->input->post('colO'),
+						'jasa_pendidikan'			=> $this->input->post('colP'),
+						'jasa_kesehatan'			=> $this->input->post('colQ'),
+						'jasa_lainnya'				=> $this->input->post('colR'),
+						'pajak_subsidi'				=> $this->input->post('pajak_subsidi'),
+					);
+
+		if($this->Model_home->insert_data_pdb_produksi_harga_konstan($data)){
+			$this->session->set_flashdata('status_insert_data_berhasil', 'Insert Data PDB Produksi Harga Konstan Berhasil');
+		}else{
+			$this->session->set_flashdata('status_insert_data_gagal', 'Insert Data PDB Produksi Harga Konstan Gagal');
+		}
+
+		redirect('Home/input_data_pdb_produksi_harga_konstan');
 	}
 }

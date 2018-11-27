@@ -3,10 +3,11 @@
 	    <div class="card horizontal">
 	      	<div class="card-stacked">
 		        <div class="card-content">
+		        	<h4>Input data PDB Produksi Harga Konstan</h4>
 		        	  <div class="row">
-					    <form class="col s12">
+					    <form class="col s12" method="POST" action="<?php echo base_url('home/insert_data_pdb_produksi_harga_konstan');?>">
 					      	<div class="row">
-					        	<div class="input-field col s6">
+					        	<div class="input-field col s12">
 					          		<input placeholder="2015" id="tahun" name="tahun" type="text" class="validate">
 					          		<label for="tahun">Tahun</label>
 					        	</div>
@@ -79,7 +80,11 @@
 					          		<label for="colR">Jasa Lainnya</label>
 					        	</div>
 					        	<div class="input-field col s6">
-					        		<a class="waves-effect waves-light btn"><i class="material-icons left">cloud</i>submit</a>
+					          		<input placeholder="dalam Rp milyar, contoh: 72592.1" id="pajak_subsidi" name="pajak_subsidi" type="text" class="validate">
+					          		<label for="pajak_subsidi">Pajak Subsidi</label>
+					        	</div>
+					        	<div class="input-field col s12">
+					        		<button class="waves-effect waves-light btn right"><i class="material-icons left">cloud</i>submit</button>
 					        	</div> 
 					      	</div>
 					    </form>
@@ -89,3 +94,20 @@
 		</div>
 	</div>
 </div>
+
+
+<script type="text/javascript">
+	$(document).ready(function(){
+   		<?php 
+   		if($this->session->flashdata('status_insert_data_berhasil')){
+   			echo 'swal("Berhasil!", "Input data berhasil dilakukan", "success")';
+   		}
+   		if($this->session->flashdata('status_insert_data_gagal')){
+   			echo 'swal("Gagal!", "Terjadi kesalahan dalam input data", "error")';
+   		}
+   		if($this->session->flashdata('status_data_sudah_ada')){
+   			echo 'swal("Gagal!", "Data pada tahun tersebut sudah ada didalam database","error")';
+   		}
+   		?>
+	});
+</script>
