@@ -168,6 +168,9 @@
         "scrollX": true,
         "ordering": false,
 	      "searching": false,
+				fixedColumns: {
+					leftColumns: 1
+				},
 				"drawCallback": function( settings ) {
 	        var id_table = this.attr('id');
 	        var table = $('#'+id_table);
@@ -203,13 +206,11 @@
 	        var tbody_td_table = table.find('tbody').find('td');
 	        tbody_td_table.addClass('black-text center-align');
 	        tbody_td_table.css({'border-bottom':'1px black solid','border-radius':'0'})
-	        var tbody_tr_table = table.find('tbody').find('tr');
-	        tbody_tr_table.hover(function(){
-	          $(this).addClass('grey lighten-3');
-	        })
-	        tbody_tr_table.mouseout(function(){
-	          $(this).removeClass('grey lighten-3');
-	        })
+					var tbody_tr_table = table.find('tbody').find('tr');
+					wrapper_table.find('.DTFC_LeftBodyWrapper').css('top','8px');
+					wrapper_table.find('.DTFC_LeftBodyLiner').css('top','1px');
+					wrapper_table.find('.DTFC_LeftHeadWrapper').css('top','10px');
+					wrapper_table.find('.odd').addClass('grey lighten-4');
 	        wrapper_table.find('select').formSelect();
 	        wrapper_table.find('.select-dropdown.dropdown-trigger').css({
 	          'color' : 'black',
@@ -230,6 +231,9 @@
         "scrollX": true,
         "ordering": false,
 	      "searching": false,
+				fixedColumns: {
+					leftColumns: 1
+				},
 				"drawCallback": function( settings ) {
 	        var id_table = this.attr('id');
 	        var table = $('#'+id_table);
@@ -265,13 +269,11 @@
 	        var tbody_td_table = table.find('tbody').find('td');
 	        tbody_td_table.addClass('black-text center-align');
 	        tbody_td_table.css({'border-bottom':'1px black solid','border-radius':'0'})
-	        var tbody_tr_table = table.find('tbody').find('tr');
-	        tbody_tr_table.hover(function(){
-	          $(this).addClass('grey lighten-3');
-	        })
-	        tbody_tr_table.mouseout(function(){
-	          $(this).removeClass('grey lighten-3');
-	        })
+					var tbody_tr_table = table.find('tbody').find('tr');
+					wrapper_table.find('.DTFC_LeftBodyWrapper').css('top','8px');
+					wrapper_table.find('.DTFC_LeftBodyLiner').css('top','1px');
+					wrapper_table.find('.DTFC_LeftHeadWrapper').css('top','10px');
+					wrapper_table.find('.odd').addClass('grey lighten-4');
 	        wrapper_table.find('select').formSelect();
 	        wrapper_table.find('.select-dropdown.dropdown-trigger').css({
 	          'color' : 'black',
@@ -292,6 +294,9 @@
 	      "scrollX": true,
 	      "ordering": false,
 	      "searching": false,
+				fixedColumns: {
+          leftColumns: 1
+				},
 				"drawCallback": function( settings ) {
 	        var id_table = this.attr('id');
 	        var table = $('#'+id_table);
@@ -328,12 +333,11 @@
 	        tbody_td_table.addClass('black-text center-align');
 	        tbody_td_table.css({'border-bottom':'1px black solid','border-radius':'0'})
 	        var tbody_tr_table = table.find('tbody').find('tr');
-	        tbody_tr_table.hover(function(){
-	          $(this).addClass('grey lighten-3');
-	        })
-	        tbody_tr_table.mouseout(function(){
-	          $(this).removeClass('grey lighten-3');
-	        })
+					wrapper_table.find('.DTFC_LeftBodyWrapper').css('top','8px');
+					wrapper_table.find('.DTFC_LeftBodyLiner').css('top','1px');
+					wrapper_table.find('.DTFC_LeftHeadWrapper').css('top','10px');
+					wrapper_table.find('.odd').addClass('grey lighten-4');
+
 	        wrapper_table.find('select').formSelect();
 	        wrapper_table.find('.select-dropdown.dropdown-trigger').css({
 	          'color' : 'black',

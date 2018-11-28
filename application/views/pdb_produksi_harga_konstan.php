@@ -151,66 +151,67 @@
 </div>
 <script type="text/javascript">
 	$(document).ready(function() {
-	    $('#pdb-table').DataTable( {
-        "scrollX": true,
-        "ordering": false,
-	      "searching": false,
-	      "drawCallback": function( settings ) {
-	        var id_table = this.attr('id');
-	        var table = $('#'+id_table);
-	        var wrapper_table = $('#'+id_table+'_wrapper').css({margin:'0',width:'100%'});
-					wrapper_table.find('.dataTables_scroll').css('padding-top','10px');
-	        var prev_btn_table = $('#'+id_table+'_previous');
-	        prev_btn_table.addClass('btn-small waves-effect waves-light green');
-	        prev_btn_table.removeClass('paginate_button');
-	        prev_btn_table.css('margin-right','3px');
-	        prev_btn_table.css('margin-bottom','6px');
-	        var next_btn_table = $('#'+id_table+'_next');
-	        next_btn_table.addClass('btn-small waves-effect waves-light green');
-	        next_btn_table.removeClass('paginate_button');
-	        next_btn_table.css('margin-left','3px');
-	        next_btn_table.css('margin-bottom','6px');
-	        var page_current_btn_table = wrapper_table.find('.paginate_button.current');
-	        page_current_btn_table.addClass('btn-small waves-effect waves-light green');
-	        page_current_btn_table.removeClass('paginate_button');
-	        page_current_btn_table.css('margin','0 3px');
-	        page_current_btn_table.css('margin-bottom','6px');
-	        var page_btn_table = wrapper_table.find('.paginate_button');
-	        page_btn_table.addClass('btn-small waves-effect waves-light green lighten-3');
-	        page_btn_table.removeClass('paginate_button');
-	        page_btn_table.css('margin','0 3px');
-	        page_btn_table.css('margin-bottom','6px');
-	        var label_table = wrapper_table.find('label');
-	        label_table.addClass('black-text');
-	        var info_table = $('#'+id_table+'_info');
-	        info_table.addClass('black-text');
-	        var thead_th_table = wrapper_table.find('thead').find('th');
-	        thead_th_table.addClass('light-green white-text center-align');
-	        thead_th_table.css('border-radius','0');
-	        var tbody_td_table = table.find('tbody').find('td');
-	        tbody_td_table.addClass('black-text center-align');
-	        tbody_td_table.css({'border-bottom':'1px black solid','border-radius':'0'})
-	        var tbody_tr_table = table.find('tbody').find('tr');
-	        tbody_tr_table.hover(function(){
-	          $(this).addClass('grey lighten-3');
-	        })
-	        tbody_tr_table.mouseout(function(){
-	          $(this).removeClass('grey lighten-3');
-	        })
-	        wrapper_table.find('select').formSelect();
-	        wrapper_table.find('.select-dropdown.dropdown-trigger').css({
-	          'color' : 'black',
-	          'border-bottom' : '1px solid #4caf50'
-	        });
-	        $('#'+id_table+'_filter').find('input').css({
-	          'color' : 'black',
-	          'margin' : '0',
-	          'border-bottom' : '1px solid #4caf50'
-	        });
-	        $('#'+id_table+'_length').find('svg').css({
-	          'fill' : 'black'
-	        })
-	      }
-	    });
+		$('#pdb-table').DataTable( {
+			"scrollX": true,
+			"ordering": false,
+			"searching": false,
+			fixedColumns: {
+				leftColumns: 1
+			},
+			"drawCallback": function( settings ) {
+				var id_table = this.attr('id');
+				var table = $('#'+id_table);
+				var wrapper_table = $('#'+id_table+'_wrapper').css({margin:'0',width:'100%'});
+				wrapper_table.find('.dataTables_scroll').css('padding-top','10px');
+				var prev_btn_table = $('#'+id_table+'_previous');
+				prev_btn_table.addClass('btn-small waves-effect waves-light green');
+				prev_btn_table.removeClass('paginate_button');
+				prev_btn_table.css('margin-right','3px');
+				prev_btn_table.css('margin-bottom','6px');
+				var next_btn_table = $('#'+id_table+'_next');
+				next_btn_table.addClass('btn-small waves-effect waves-light green');
+				next_btn_table.removeClass('paginate_button');
+				next_btn_table.css('margin-left','3px');
+				next_btn_table.css('margin-bottom','6px');
+				var page_current_btn_table = wrapper_table.find('.paginate_button.current');
+				page_current_btn_table.addClass('btn-small waves-effect waves-light green');
+				page_current_btn_table.removeClass('paginate_button');
+				page_current_btn_table.css('margin','0 3px');
+				page_current_btn_table.css('margin-bottom','6px');
+				var page_btn_table = wrapper_table.find('.paginate_button');
+				page_btn_table.addClass('btn-small waves-effect waves-light green lighten-3');
+				page_btn_table.removeClass('paginate_button');
+				page_btn_table.css('margin','0 3px');
+				page_btn_table.css('margin-bottom','6px');
+				var label_table = wrapper_table.find('label');
+				label_table.addClass('black-text');
+				var info_table = $('#'+id_table+'_info');
+				info_table.addClass('black-text');
+				var thead_th_table = wrapper_table.find('thead').find('th');
+				thead_th_table.addClass('light-green white-text center-align');
+				thead_th_table.css('border-radius','0');
+				var tbody_td_table = table.find('tbody').find('td');
+				tbody_td_table.addClass('black-text center-align');
+				tbody_td_table.css({'border-bottom':'1px black solid','border-radius':'0'})
+				var tbody_tr_table = table.find('tbody').find('tr');
+				wrapper_table.find('.DTFC_LeftBodyWrapper').css('top','8px');
+				wrapper_table.find('.DTFC_LeftBodyLiner').css('top','1px');
+				wrapper_table.find('.DTFC_LeftHeadWrapper').css('top','10px');
+				wrapper_table.find('.odd').addClass('grey lighten-4');
+				wrapper_table.find('select').formSelect();
+				wrapper_table.find('.select-dropdown.dropdown-trigger').css({
+					'color' : 'black',
+					'border-bottom' : '1px solid #4caf50'
+				});
+				$('#'+id_table+'_filter').find('input').css({
+					'color' : 'black',
+					'margin' : '0',
+					'border-bottom' : '1px solid #4caf50'
+				});
+				$('#'+id_table+'_length').find('svg').css({
+					'fill' : 'black'
+				})
+			}
+		});
 	});
 </script>
