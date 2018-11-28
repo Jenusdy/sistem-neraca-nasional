@@ -45,7 +45,7 @@
         </div>
         <div class="row">
         	<div class="col l12 left">
-				<a class="waves-effect waves-light btn"><i class="material-icons right">cloud</i>Generate Output</a>   
+				<a href="<?php echo base_url('home/output_pdb_pengeluaran');?>" class="waves-effect waves-light btn"><i class="material-icons right">cloud</i>Generate Output</a>   
 				<a href="<?php echo base_url('home/input_data_pdb_pengeluaran');?>" class="waves-effect waves-light btn"><i class="material-icons right">cloud</i>Tambah data</a>
 			</div>
 		</div>
