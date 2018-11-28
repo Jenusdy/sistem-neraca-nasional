@@ -109,5 +109,6 @@
    			echo 'swal("Gagal!", "Data pada tahun tersebut sudah ada didalam database","error")';
    		}
    		?>
+
 	});
 </script>

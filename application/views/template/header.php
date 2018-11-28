@@ -9,6 +9,7 @@
     <link type="text/css" rel="stylesheet" href="<?php echo base_url('assets/css/leaflet.css')?>">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/sweet-alert.css'); ?>">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/jquery.loading.min.css'); ?>">
     <script type="text/javascript" src="<?php echo base_url('assets/js/jquery.min.js');?>"></script>
     <script type="text/javascript" src="<?php echo base_url('assets/js/d3.min.js');?>"></script>
     <script type="text/javascript" src="<?php echo base_url('assets/js/data-table.js');?>"></script>
@@ -16,5 +17,6 @@
     <script type="text/javascript" src="<?php echo base_url('assets/js/materialize.min.js');?>"></script>
     <script type="text/javascript" src="<?php echo base_url('assets/js/leaflet.js')?>"></script>
     <script type="text/javascript" src="<?php echo base_url('assets/js/sweet-alert.min.js');?>"></script>
+    <script type="text/javascript" src="<?php echo base_url('assets/js/jquery.loading.min.js');?>"></script>
   </head>
   <body>
