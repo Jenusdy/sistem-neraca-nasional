@@ -1,10 +1,3 @@
-<style type="text/css">
-	div.dataTables_wrapper {
-        width: 800px;
-        margin: 0 auto;
-    }
-</style>
-
 <div class="container" style="margin-top:30px;">
 	<div class="col s12">
 		<h4 class="grey-text text-darken-3">Data PDB Berdasarkan Kegiatan Ekonomi</h4>
@@ -64,8 +57,8 @@
 	      </table>
 			</div>
 			<div class="grey lighten-4 card-action">
-				<a href="<?php echo base_url('home/output_pdb_produksi_harga_konstan');?>" class="light-green lighten-1 waves-effect waves-light btn"><i class="far fa-newspaper right"></i> Generate Output</a>
-				<a href="<?php echo base_url('home/input_data_pdb_produksi_harga_konstan');?>" class="light-green lighten-1 waves-effect waves-light btn"><i class="fas fa-plus right"></i> Tambah data</a>
+				<a href="<?php echo base_url('home/output_pdb_produksi_harga_konstan');?>" class="light-green waves-effect waves-light btn"><i class="far fa-newspaper right"></i> Generate Output</a>
+				<a href="<?php echo base_url('home/input_data_pdb_produksi_harga_konstan');?>" class="light-green waves-effect waves-light btn"><i class="fas fa-plus right"></i> Tambah data</a>
 			</div>
 		</div>
 	</div>
