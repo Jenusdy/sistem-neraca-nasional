@@ -250,12 +250,129 @@ class Home extends CI_Controller {
 		$this->load->view('template/footer');
 	}
 
-	public function output_pdb_pengeluaran(){
-		$header['page'] = 'Output PDB Pengeluaran ';
+	public function input_pdb_pengeluaran_investasi(){
+		$header['page'] = 'Prediksi Investasi Pengeluaran';
 
  		$this->load->view('template/header',$header);
 		$this->load->view('template/navbar');
 		$this->load->view('output_pdb_pengeluaran');
+		$this->load->view('template/footer');
+	}
+
+	public function prediksi_pdb_pengeluaran(){
+		$header['page'] = 'Prediksi PDB Pengeluaran ICOR';
+
+		$data['pdb_pengeluaran'] = $this->Model_home->get_pdb_pengeluaran();
+		$data['pdb_harga_berlaku'] = $this->Model_home->get_produksi_pdb_berlaku();
+		$i = 0;
+		foreach ($data['pdb_harga_berlaku'] as $key => $value) {
+			$counter = 0;
+			$nilai_tambah = 0;
+			$produk_domestik_bruto = 0;
+
+			
+			foreach ($value as $key => $nilai) {
+				$counter+=1;
+				if($counter>1 && $counter<19){
+					$nilai_tambah += $nilai;
+				}
+			}
+
+			$data['pdb_harga_berlaku'][$i]->nilai_tambah = $nilai_tambah;
+			$data['pdb_harga_berlaku'][$i]->produk_domestik_bruto = $nilai_tambah + $data['pdb_harga_berlaku'][$i]->pajak_subsidi;
+
+			if($i!=0){
+				$data['pdb_harga_berlaku'][$i]->pertumbuhan_ekonomi = (($data['pdb_harga_berlaku'][$i]->produk_domestik_bruto/$data['pdb_harga_berlaku'][$i-1]->produk_domestik_bruto)-1)*100;
+			}else{
+				$data['pdb_harga_berlaku'][$i]->pertumbuhan_ekonomi = NULL;
+			}
+			
+			$i+=1;
+		}
+
+		$data['pdb_harga_konstan'] = $this->Model_home->get_produksi_pdb_konstan();
+
+		$i = 0;
+		foreach ($data['pdb_harga_konstan'] as $key => $value) {
+			$counter = 0;
+			$nilai_tambah = 0;
+			$produk_domestik_bruto = 0;
+
+			
+			foreach ($value as $key => $nilai) {
+				$counter+=1;
+				if($counter>1 && $counter<19){
+					$nilai_tambah += $nilai;
+				}
+			}
+
+			$data['pdb_harga_konstan'][$i]->nilai_tambah = $nilai_tambah;
+			$data['pdb_harga_konstan'][$i]->produk_domestik_bruto = $nilai_tambah + $data['pdb_harga_konstan'][$i]->pajak_subsidi;
+
+			if($i!=0){
+				$data['pdb_harga_konstan'][$i]->pertumbuhan_ekonomi = (($data['pdb_harga_konstan'][$i]->produk_domestik_bruto/$data['pdb_harga_konstan'][$i-1]->produk_domestik_bruto)-1)*100;
+			}else{
+				$data['pdb_harga_konstan'][$i]->pertumbuhan_ekonomi = NULL;
+			}
+			
+			$i+=1;
+		}
+
+
+		$data['input'] = array(	
+						'tahun' 				=> $this->input->post('tahun') ,
+						'persentase_pdb' 		=> $this->input->post('persentase_pdb'),
+						'inflasi'				=> $this->input->post('inflasi')
+					);
+
+		$i = 0;
+		$pembentukan_modal_tetap_bruto = 0;
+		$nilai_tambah_pdb = 0;
+
+		foreach ($data['pdb_pengeluaran'] as $key => $value) {
+			$counter=0;
+			$produk_domestik_bruto = 0;
+			
+			foreach ($value as $key => $nilai) {
+				if($counter!=0 and $counter!=7){
+					$produk_domestik_bruto+=$nilai;
+				}
+
+				if($counter==7){
+					$produk_domestik_bruto-=$nilai;
+				}
+				$counter+=1;
+			}	
+
+			if($i!=0){
+				$pembentukan_modal_tetap_bruto += $value->pmtb_bruto;	
+			}
+			 
+			$data['pdb_pengeluaran'][$i]->produk_domestik_bruto = round($produk_domestik_bruto,2);
+
+			if($i!=0){
+				$nilai_tambah_pdb+=$data['pdb_pengeluaran'][$i]->produk_domestik_bruto-$data['pdb_pengeluaran'][$i-1]->produk_domestik_bruto;
+			}
+
+			$i+=1;
+		}
+
+		$last_element = end($data['pdb_pengeluaran']);
+
+		$last_element_produksi_harga_konstan = end($data['pdb_harga_konstan']);
+		$last_element_produksi_harga_berlaku = end($data['pdb_harga_berlaku']);
+
+
+		$data['implicit_price_index'] = $last_element_produksi_harga_berlaku->produk_domestik_bruto/$last_element_produksi_harga_konstan->produk_domestik_bruto;
+		$data['implicit_price_index_inflasi'] = $data['implicit_price_index']*(100+$this->input->post('inflasi'))/100;
+		$data['perkiraan_pdb_tahun_ke_n'] = $last_element->produk_domestik_bruto*(100+$this->input->post('persentase_pdb'))/100;
+		$data['pembentukan_modal_tetap_bruto'] = $pembentukan_modal_tetap_bruto;
+		$data['nilai_tambah_pdb'] = $nilai_tambah_pdb;
+		$data['delta_produk_domestik_bruto'] = $data['perkiraan_pdb_tahun_ke_n']-$last_element->produk_domestik_bruto;
+
+		$this->load->view('template/header',$header);
+		$this->load->view('template/navbar');
+		$this->load->view('pdb_pengeluaran_prediksi',$data);
 		$this->load->view('template/footer');
 	}
 }

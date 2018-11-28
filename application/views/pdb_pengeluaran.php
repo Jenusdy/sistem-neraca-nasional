@@ -7,7 +7,6 @@
 
 <div class="container">
 <div class="col s12 m7">
-<h4 class="header">Data PDB Berdasarkan Kegiatan Ekonomi</h4>
     <div class="card horizontal">
       <div class="card-stacked">
         <div class="card-content">
@@ -45,7 +44,7 @@
         </div>
         <div class="row">
         	<div class="col l12 left">
-				<a href="<?php echo base_url('home/output_pdb_pengeluaran');?>" class="waves-effect waves-light btn"><i class="material-icons right">cloud</i>Generate Output</a>   
+				<a href="<?php echo base_url('home/input_pdb_pengeluaran_investasi');?>" class="waves-effect waves-light btn"><i class="material-icons right">cloud</i>Prediksi Investasi/ICOR</a>   
 				<a href="<?php echo base_url('home/input_data_pdb_pengeluaran');?>" class="waves-effect waves-light btn"><i class="material-icons right">cloud</i>Tambah data</a>
 			</div>
 		</div>
@@ -60,8 +59,8 @@
 	    $('#pdb-table').DataTable( {
 	        "scrollX": true,
 	        "ordering": false,
-	      "searching": false,
-	      "drawCallback": function( settings ) {
+	      	"searching": false,
+	      	"drawCallback": function( settings ) {
 	        var id_table = this.attr('id');
 	        var table = $('#'+id_table);
 	        var wrapper_table = $('#'+id_table+'_wrapper');
