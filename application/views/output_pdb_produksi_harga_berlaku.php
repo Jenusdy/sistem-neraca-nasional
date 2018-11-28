@@ -31,13 +31,16 @@
 						</tbody>
 					</table>
 				</div>
+				<div>
+					<div id='container1'></div>
+				</div>	
 			</div>
 		</div>
 
 		<div class="col s12">
 			<div class="card white">
 				<div class="card-content">
-					<span class="card-title light-green-text text-darken-3"><i class="fas fa-table"></i> Tabel Pertumbuhan Ekonomi Perlapangan Usaha Harga Berlaku</span>
+					<span class="card-title light-green-text text-darken-3"><i class="fas fa-table"></i> Tabel Pertumbuhan Ekonomi Menurut Lapangan Usaha Harga Berlaku (persen)</span>
 					<hr>
 					<table id="pdb-table-kedua" style="width:100%">
 						<thead>
@@ -69,31 +72,34 @@
 							<?php for ($i=0; $i < sizeof($pdb_harga_berlaku); $i++) {
 								if($i!=0){
 									echo "<tr><td>".$pdb_harga_berlaku[$i]->tahun."</td>";
-									echo "<td>".round(((($pdb_harga_berlaku[$i]->pertanian/$pdb_harga_berlaku[$i-1]->pertanian)-1)*100),2)."%</td>";
-									echo "<td>".round(((($pdb_harga_berlaku[$i]->pertambangan/$pdb_harga_berlaku[$i-1]->pertambangan)-1)*100),2)."%</td>";
-									echo "<td>".round(((($pdb_harga_berlaku[$i]->industri_pengolahan/$pdb_harga_berlaku[$i-1]->industri_pengolahan)-1)*100),2)."%</td>";
-									echo "<td>".round(((($pdb_harga_berlaku[$i]->listrik_gas/$pdb_harga_berlaku[$i-1]->listrik_gas)-1)*100),2)."%</td>";
-									echo "<td>".round(((($pdb_harga_berlaku[$i]->air/$pdb_harga_berlaku[$i-1]->air)-1)*100),2)."%</td>";
-									echo "<td>".round(((($pdb_harga_berlaku[$i]->konstruksi/$pdb_harga_berlaku[$i-1]->konstruksi)-1)*100),2)."%</td>";
-									echo "<td>".round(((($pdb_harga_berlaku[$i]->perdagangan/$pdb_harga_berlaku[$i-1]->perdagangan)-1)*100),2)."%</td>";
-									echo "<td>".round(((($pdb_harga_berlaku[$i]->transportasi_pergudangan/$pdb_harga_berlaku[$i-1]->transportasi_pergudangan)-1)*100),2)."%</td>";
-									echo "<td>".round(((($pdb_harga_berlaku[$i]->akomodasi_makanminum/$pdb_harga_berlaku[$i-1]->akomodasi_makanminum)-1)*100),2)."%</td>";
-									echo "<td>".round(((($pdb_harga_berlaku[$i]->informasi_komunikasi/$pdb_harga_berlaku[$i-1]->informasi_komunikasi)-1)*100),2)."%</td>";
-									echo "<td>".round(((($pdb_harga_berlaku[$i]->jasa_keuangan/$pdb_harga_berlaku[$i-1]->jasa_keuangan)-1)*100),2)."%</td>";
-									echo "<td>".round(((($pdb_harga_berlaku[$i]->real_estate/$pdb_harga_berlaku[$i-1]->real_estate)-1)*100),2)."%</td>";
-									echo "<td>".round(((($pdb_harga_berlaku[$i]->jasa_perusahaan/$pdb_harga_berlaku[$i-1]->jasa_perusahaan)-1)*100),2)."%</td>";
-									echo "<td>".round(((($pdb_harga_berlaku[$i]->administrasi_pemerintahan/$pdb_harga_berlaku[$i-1]->administrasi_pemerintahan)-1)*100),2)."%</td>";
-									echo "<td>".round(((($pdb_harga_berlaku[$i]->jasa_pendidikan/$pdb_harga_berlaku[$i-1]->jasa_pendidikan)-1)*100),2)."%</td>";
-									echo "<td>".round(((($pdb_harga_berlaku[$i]->jasa_kesehatan/$pdb_harga_berlaku[$i-1]->jasa_kesehatan)-1)*100),2)."%</td>";
-									echo "<td>".round(((($pdb_harga_berlaku[$i]->jasa_lainnya/$pdb_harga_berlaku[$i-1]->jasa_lainnya)-1)*100),2)."%</td>";
-									echo "<td>".round(((($pdb_harga_berlaku[$i]->pajak_subsidi/$pdb_harga_berlaku[$i-1]->pajak_subsidi)-1)*100),2)."%</td>";
-									echo "<td>".round(((($pdb_harga_berlaku[$i]->produk_domestik_bruto/$pdb_harga_berlaku[0]->produk_domestik_bruto)**(1/($pdb_harga_berlaku[$i]->tahun-$pdb_harga_berlaku[0]->tahun)))-1)*100,2)."%</td></tr>";
+									echo "<td>".round(((($pdb_harga_berlaku[$i]->pertanian/$pdb_harga_berlaku[$i-1]->pertanian)-1)*100),2)."</td>";
+									echo "<td>".round(((($pdb_harga_berlaku[$i]->pertambangan/$pdb_harga_berlaku[$i-1]->pertambangan)-1)*100),2)."</td>";
+									echo "<td>".round(((($pdb_harga_berlaku[$i]->industri_pengolahan/$pdb_harga_berlaku[$i-1]->industri_pengolahan)-1)*100),2)."</td>";
+									echo "<td>".round(((($pdb_harga_berlaku[$i]->listrik_gas/$pdb_harga_berlaku[$i-1]->listrik_gas)-1)*100),2)."</td>";
+									echo "<td>".round(((($pdb_harga_berlaku[$i]->air/$pdb_harga_berlaku[$i-1]->air)-1)*100),2)."</td>";
+									echo "<td>".round(((($pdb_harga_berlaku[$i]->konstruksi/$pdb_harga_berlaku[$i-1]->konstruksi)-1)*100),2)."</td>";
+									echo "<td>".round(((($pdb_harga_berlaku[$i]->perdagangan/$pdb_harga_berlaku[$i-1]->perdagangan)-1)*100),2)."</td>";
+									echo "<td>".round(((($pdb_harga_berlaku[$i]->transportasi_pergudangan/$pdb_harga_berlaku[$i-1]->transportasi_pergudangan)-1)*100),2)."</td>";
+									echo "<td>".round(((($pdb_harga_berlaku[$i]->akomodasi_makanminum/$pdb_harga_berlaku[$i-1]->akomodasi_makanminum)-1)*100),2)."</td>";
+									echo "<td>".round(((($pdb_harga_berlaku[$i]->informasi_komunikasi/$pdb_harga_berlaku[$i-1]->informasi_komunikasi)-1)*100),2)."</td>";
+									echo "<td>".round(((($pdb_harga_berlaku[$i]->jasa_keuangan/$pdb_harga_berlaku[$i-1]->jasa_keuangan)-1)*100),2)."</td>";
+									echo "<td>".round(((($pdb_harga_berlaku[$i]->real_estate/$pdb_harga_berlaku[$i-1]->real_estate)-1)*100),2)."</td>";
+									echo "<td>".round(((($pdb_harga_berlaku[$i]->jasa_perusahaan/$pdb_harga_berlaku[$i-1]->jasa_perusahaan)-1)*100),2)."</td>";
+									echo "<td>".round(((($pdb_harga_berlaku[$i]->administrasi_pemerintahan/$pdb_harga_berlaku[$i-1]->administrasi_pemerintahan)-1)*100),2)."</td>";
+									echo "<td>".round(((($pdb_harga_berlaku[$i]->jasa_pendidikan/$pdb_harga_berlaku[$i-1]->jasa_pendidikan)-1)*100),2)."</td>";
+									echo "<td>".round(((($pdb_harga_berlaku[$i]->jasa_kesehatan/$pdb_harga_berlaku[$i-1]->jasa_kesehatan)-1)*100),2)."</td>";
+									echo "<td>".round(((($pdb_harga_berlaku[$i]->jasa_lainnya/$pdb_harga_berlaku[$i-1]->jasa_lainnya)-1)*100),2)."</td>";
+									echo "<td>".round(((($pdb_harga_berlaku[$i]->pajak_subsidi/$pdb_harga_berlaku[$i-1]->pajak_subsidi)-1)*100),2)."</td>";
+									echo "<td>".round(((($pdb_harga_berlaku[$i]->produk_domestik_bruto/$pdb_harga_berlaku[0]->produk_domestik_bruto)**(1/($pdb_harga_berlaku[$i]->tahun-$pdb_harga_berlaku[0]->tahun)))-1)*100,2)."</td></tr>";
 								}
 							}
 							?>
 						</tbody>
 					</table>
 				</div>
+				<div>
+					<div id='container2'></div>
+				</div>	
 				<div class="grey lighten-4 card-action right-align">
 					<a href="#modal_keterangan" class="modal-trigger light-green waves-effect waves-light btn"><i class="fas fa-info-circle right"></i>Keterangan</a>
 				</div>
@@ -103,7 +109,7 @@
 		<div class="col s12">
 			<div class="card white">
 				<div class="card-content">
-					<span class="card-title light-green-text text-darken-3"><i class="fas fa-table"></i> Tabel Share Output Ekonomi Perlapangan Usaha Harga Berlaku</span>
+					<span class="card-title light-green-text text-darken-3"><i class="fas fa-table"></i> Tabel Share Output Ekonomi Menurut Lapangan Usaha Harga Berlaku (persen)</span>
 					<hr>
 					<table id="pdb-table-ketiga" style="width:100%">
 						<thead>
@@ -134,31 +140,34 @@
 						<tbody>
 							<?php for ($i=0; $i < sizeof($pdb_harga_berlaku); $i++) {
 								echo "<tr><td>".$pdb_harga_berlaku[$i]->tahun."</td>";
-								echo "<td>".round((($pdb_harga_berlaku[$i]->pertanian/$pdb_harga_berlaku[$i]->produk_domestik_bruto)*100),2)."%</td>";
-								echo "<td>".round((($pdb_harga_berlaku[$i]->pertambangan/$pdb_harga_berlaku[$i]->produk_domestik_bruto)*100),2)."%</td>";
-								echo "<td>".round((($pdb_harga_berlaku[$i]->industri_pengolahan/$pdb_harga_berlaku[$i]->produk_domestik_bruto)*100),2)."%</td>";
-								echo "<td>".round((($pdb_harga_berlaku[$i]->listrik_gas/$pdb_harga_berlaku[$i]->produk_domestik_bruto)*100),2)."%</td>";
-								echo "<td>".round((($pdb_harga_berlaku[$i]->air/$pdb_harga_berlaku[$i]->produk_domestik_bruto)*100),2)."%</td>";
-								echo "<td>".round((($pdb_harga_berlaku[$i]->konstruksi/$pdb_harga_berlaku[$i]->produk_domestik_bruto)*100),2)."%</td>";
-								echo "<td>".round((($pdb_harga_berlaku[$i]->perdagangan/$pdb_harga_berlaku[$i]->produk_domestik_bruto)*100),2)."%</td>";
-								echo "<td>".round((($pdb_harga_berlaku[$i]->transportasi_pergudangan/$pdb_harga_berlaku[$i]->produk_domestik_bruto)*100),2)."%</td>";
-								echo "<td>".round((($pdb_harga_berlaku[$i]->akomodasi_makanminum/$pdb_harga_berlaku[$i]->produk_domestik_bruto)*100),2)."%</td>";
-								echo "<td>".round((($pdb_harga_berlaku[$i]->informasi_komunikasi/$pdb_harga_berlaku[$i]->produk_domestik_bruto)*100),2)."%</td>";
-								echo "<td>".round((($pdb_harga_berlaku[$i]->jasa_keuangan/$pdb_harga_berlaku[$i]->produk_domestik_bruto)*100),2)."%</td>";
-								echo "<td>".round((($pdb_harga_berlaku[$i]->real_estate/$pdb_harga_berlaku[$i]->produk_domestik_bruto)*100),2)."%</td>";
-								echo "<td>".round((($pdb_harga_berlaku[$i]->jasa_perusahaan/$pdb_harga_berlaku[$i]->produk_domestik_bruto)*100),2)."%</td>";
-								echo "<td>".round((($pdb_harga_berlaku[$i]->administrasi_pemerintahan/$pdb_harga_berlaku[$i]->produk_domestik_bruto)*100),2)."%</td>";
-								echo "<td>".round((($pdb_harga_berlaku[$i]->jasa_pendidikan/$pdb_harga_berlaku[$i]->produk_domestik_bruto)*100),2)."%</td>";
-								echo "<td>".round((($pdb_harga_berlaku[$i]->jasa_kesehatan/$pdb_harga_berlaku[$i]->produk_domestik_bruto)*100),2)."%</td>";
-								echo "<td>".round((($pdb_harga_berlaku[$i]->jasa_lainnya/$pdb_harga_berlaku[$i]->produk_domestik_bruto)*100),2)."%</td>";
-								echo "<td>".round((($pdb_harga_berlaku[$i]->nilai_tambah/$pdb_harga_berlaku[$i]->produk_domestik_bruto)*100),2)."%</td>";
-								echo "<td>".round((($pdb_harga_berlaku[$i]->pajak_subsidi/$pdb_harga_berlaku[$i]->produk_domestik_bruto)*100),2)."%</td>";
-								echo "<td>".round((($pdb_harga_berlaku[$i]->produk_domestik_bruto/$pdb_harga_berlaku[$i]->produk_domestik_bruto)*100),2)."%</td></tr>";
+								echo "<td>".round((($pdb_harga_berlaku[$i]->pertanian/$pdb_harga_berlaku[$i]->produk_domestik_bruto)*100),2)."</td>";
+								echo "<td>".round((($pdb_harga_berlaku[$i]->pertambangan/$pdb_harga_berlaku[$i]->produk_domestik_bruto)*100),2)."</td>";
+								echo "<td>".round((($pdb_harga_berlaku[$i]->industri_pengolahan/$pdb_harga_berlaku[$i]->produk_domestik_bruto)*100),2)."</td>";
+								echo "<td>".round((($pdb_harga_berlaku[$i]->listrik_gas/$pdb_harga_berlaku[$i]->produk_domestik_bruto)*100),2)."</td>";
+								echo "<td>".round((($pdb_harga_berlaku[$i]->air/$pdb_harga_berlaku[$i]->produk_domestik_bruto)*100),2)."</td>";
+								echo "<td>".round((($pdb_harga_berlaku[$i]->konstruksi/$pdb_harga_berlaku[$i]->produk_domestik_bruto)*100),2)."</td>";
+								echo "<td>".round((($pdb_harga_berlaku[$i]->perdagangan/$pdb_harga_berlaku[$i]->produk_domestik_bruto)*100),2)."</td>";
+								echo "<td>".round((($pdb_harga_berlaku[$i]->transportasi_pergudangan/$pdb_harga_berlaku[$i]->produk_domestik_bruto)*100),2)."</td>";
+								echo "<td>".round((($pdb_harga_berlaku[$i]->akomodasi_makanminum/$pdb_harga_berlaku[$i]->produk_domestik_bruto)*100),2)."</td>";
+								echo "<td>".round((($pdb_harga_berlaku[$i]->informasi_komunikasi/$pdb_harga_berlaku[$i]->produk_domestik_bruto)*100),2)."</td>";
+								echo "<td>".round((($pdb_harga_berlaku[$i]->jasa_keuangan/$pdb_harga_berlaku[$i]->produk_domestik_bruto)*100),2)."</td>";
+								echo "<td>".round((($pdb_harga_berlaku[$i]->real_estate/$pdb_harga_berlaku[$i]->produk_domestik_bruto)*100),2)."</td>";
+								echo "<td>".round((($pdb_harga_berlaku[$i]->jasa_perusahaan/$pdb_harga_berlaku[$i]->produk_domestik_bruto)*100),2)."</td>";
+								echo "<td>".round((($pdb_harga_berlaku[$i]->administrasi_pemerintahan/$pdb_harga_berlaku[$i]->produk_domestik_bruto)*100),2)."</td>";
+								echo "<td>".round((($pdb_harga_berlaku[$i]->jasa_pendidikan/$pdb_harga_berlaku[$i]->produk_domestik_bruto)*100),2)."</td>";
+								echo "<td>".round((($pdb_harga_berlaku[$i]->jasa_kesehatan/$pdb_harga_berlaku[$i]->produk_domestik_bruto)*100),2)."</td>";
+								echo "<td>".round((($pdb_harga_berlaku[$i]->jasa_lainnya/$pdb_harga_berlaku[$i]->produk_domestik_bruto)*100),2)."</td>";
+								echo "<td>".round((($pdb_harga_berlaku[$i]->nilai_tambah/$pdb_harga_berlaku[$i]->produk_domestik_bruto)*100),2)."</td>";
+								echo "<td>".round((($pdb_harga_berlaku[$i]->pajak_subsidi/$pdb_harga_berlaku[$i]->produk_domestik_bruto)*100),2)."</td>";
+								echo "<td>".round((($pdb_harga_berlaku[$i]->produk_domestik_bruto/$pdb_harga_berlaku[$i]->produk_domestik_bruto)*100),2)."</td></tr>";
 								}
 							?>
 						</tbody>
 					</table>
 				</div>
+				<div>
+					<div id='container3'></div>
+				</div>	
 				<div class="grey lighten-4 card-action right-align">
 					<a href="#modal_keterangan" class="modal-trigger light-green waves-effect waves-light btn"><i class="fas fa-info-circle right"></i>Keterangan</a>
 				</div>
@@ -447,4 +456,118 @@
 	      }
 	    });
 	});
+</script>
+
+<script src="https://code.highcharts.com/modules/oldie.js"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/data.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+
+<script type="text/javascript">
+	Highcharts.chart('container1', {
+  data: {
+    table: 'pdb-table-pertama'
+  },
+  chart: {
+    type: 'line'
+  },
+  title: {
+    text: 'Grafik Output PDB dan Pertumbuhan Ekonomi'
+  },
+  xAxis: {
+    type: 'category',
+    labels: {
+      rotation: -45,
+      style: {
+        fontSize: '13px',
+        fontFamily: 'Verdana, sans-serif'
+      }
+    }
+  },
+  yAxis: {
+    allowDecimals: true,
+    title: {
+      text: 'Units'
+    }
+  },
+  tooltip: {
+    formatter: function () {
+      return '<b>' + this.series.name + '</b><br/>' +
+        this.point.y + ' ' + this.point.name.toLowerCase();
+    }
+  }
+});
+</script>
+
+<script type="text/javascript">
+	Highcharts.chart('container2', {
+  data: {
+    table: 'pdb-table-kedua'
+  },
+  chart: {
+    type: 'line'
+  },
+  title: {
+    text: 'Grafik Pertumbuhan Ekonomi Menurut Lapangan Usaha Harga Berlaku (persen)'
+  },
+  xAxis: {
+    type: 'category',
+    labels: {
+      rotation: -45,
+      style: {
+        fontSize: '13px',
+        fontFamily: 'Verdana, sans-serif'
+      }
+    }
+  },
+  yAxis: {
+    allowDecimals: true,
+    title: {
+      text: 'Units'
+    }
+  },
+  tooltip: {
+    formatter: function () {
+      return '<b>' + this.series.name + '</b><br/>' +
+        this.point.y + ' ' + this.point.name.toLowerCase();
+    }
+  }
+});
+</script>
+
+<script type="text/javascript">
+	Highcharts.chart('container3', {
+  data: {
+    table: 'pdb-table-ketiga'
+  },
+  chart: {
+    type: 'line'
+  },
+  title: {
+    text: 'Grafik Share Output Ekonomi Menurut Lapangan Usaha Harga Berlaku (persen)'
+  },
+  xAxis: {
+    type: 'category',
+    labels: {
+      rotation: -45,
+      style: {
+        fontSize: '13px',
+        fontFamily: 'Verdana, sans-serif'
+      }
+    }
+  },
+  yAxis: {
+    allowDecimals: true,
+    title: {
+      text: 'Units'
+    }
+  },
+  tooltip: {
+    formatter: function () {
+      return '<b>' + this.series.name + '</b><br/>' +
+        this.point.y + ' ' + this.point.name.toLowerCase();
+    }
+  }
+});
 </script>
