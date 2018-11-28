@@ -40,7 +40,7 @@
 		<div class="col s12">
 			<div class="card white">
 				<div class="card-content">
-					<span class="card-title light-green-text text-darken-3"><i class="fas fa-table"></i> Tabel Pertumbuhan Ekonomi Perlapangan Usaha Harga Konstan</span>
+					<span class="card-title light-green-text text-darken-3"><i class="fas fa-table"></i> Tabel Pertumbuhan Ekonomi Menurut Lapangan Usaha Harga Konstan (persen)</span>
 					<hr>
 					<table id="pdb-table-kedua" style="width:100%">
 						<thead>
@@ -109,7 +109,7 @@
 		<div class="col s12">
 			<div class="card white">
 				<div class="card-content">
-					<span class="card-title light-green-text text-darken-3"><i class="fas fa-table"></i> Tabel Share Output Ekonomi Perlapangan Usaha Harga Konstan</span>
+					<span class="card-title light-green-text text-darken-3"><i class="fas fa-table"></i> Tabel Share Output Ekonomi Menurut Lapangan Usaha Harga Konstan (persen)</span>
 					<hr>
 					<table id="pdb-table-ketiga" style="width:100%">
 						<thead>
@@ -509,7 +509,7 @@
     type: 'line'
   },
   title: {
-    text: 'Grafik Pertumbuhan Ekonomi Perlapangan Usaha Harga Konstan'
+    text: 'Grafik Pertumbuhan Ekonomi Menurut Lapangan Usaha Harga Konstan (persen)'
   },
   xAxis: {
     type: 'category',
@@ -545,7 +545,7 @@
     type: 'line'
   },
   title: {
-    text: 'Grafik Share Output Ekonomi Perlapangan Usaha Harga Konstan'
+    text: 'Grafik Share Output Ekonomi Menurut Lapangan Usaha Harga Konstan (persen)'
   },
   xAxis: {
     type: 'category',
