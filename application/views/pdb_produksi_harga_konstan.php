@@ -56,6 +56,9 @@
 	        </tbody>
 	      </table>
 			</div>
+			<div>
+				<div id='container'></div>
+			</div>
 			<div class="grey lighten-4 card-action">
 				<a href="<?php echo base_url('home/output_pdb_produksi_harga_konstan');?>" class="light-green waves-effect waves-light btn"><i class="far fa-newspaper right"></i>Generate Output</a>
 				<a href="<?php echo base_url('home/input_data_pdb_produksi_harga_konstan');?>" class="light-green waves-effect waves-light btn"><i class="fas fa-plus right"></i>Tambah data</a>
@@ -216,4 +219,46 @@
 			}
 		});
 	});
+</script>
+
+<script src="https://code.highcharts.com/modules/oldie.js"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/data.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+
+<script type="text/javascript">
+	Highcharts.chart('container', {
+  data: {
+    table: 'pdb-table'
+  },
+  chart: {
+    type: 'line'
+  },
+  title: {
+    text: 'Grafik PDB Produksi Indonesia Atas Dasar Harga Konstan (Rp Milyar)'
+  },
+  xAxis: {
+    type: 'category',
+    labels: {
+      rotation: -45,
+      style: {
+        fontSize: '13px',
+        fontFamily: 'Verdana, sans-serif'
+      }
+    }
+  },
+  yAxis: {
+    allowDecimals: true,
+    title: {
+      text: 'Units'
+    }
+  },
+  tooltip: {
+    formatter: function () {
+      return '<b>' + this.series.name + '</b><br/>' +
+        this.point.y + ' ' + this.point.name.toLowerCase();
+    }
+  }
+});
 </script>
