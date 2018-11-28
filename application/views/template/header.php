@@ -12,6 +12,7 @@
     <script type="text/javascript" src="<?php echo base_url('assets/js/jquery.min.js');?>"></script>
     <script type="text/javascript" src="<?php echo base_url('assets/js/d3.min.js');?>"></script>
     <script type="text/javascript" src="<?php echo base_url('assets/js/data-table.js');?>"></script>
+    <script type="text/javascript" src="<?php echo base_url('assets/js/data-table-fixed-column.js');?>"></script>
     <script type="text/javascript" src="<?php echo base_url('assets/js/materialize.min.js');?>"></script>
     <script type="text/javascript" src="<?php echo base_url('assets/js/leaflet.js')?>"></script>
     <script type="text/javascript" src="<?php echo base_url('assets/js/sweet-alert.min.js');?>"></script>
