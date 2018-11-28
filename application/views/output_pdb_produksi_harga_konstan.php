@@ -97,7 +97,7 @@
 					     			echo "<td>".round(((($pdb_harga_konstan[$i]->jasa_kesehatan/$pdb_harga_konstan[$i-1]->jasa_kesehatan)-1)*100),2)."%</td>";
 					     			echo "<td>".round(((($pdb_harga_konstan[$i]->jasa_lainnya/$pdb_harga_konstan[$i-1]->jasa_lainnya)-1)*100),2)."%</td>";
 					     			echo "<td>".round(((($pdb_harga_konstan[$i]->pajak_subsidi/$pdb_harga_konstan[$i-1]->pajak_subsidi)-1)*100),2)."%</td>";
-					     			echo "<td>".round(((($pdb_harga_konstan[$i]->produk_domestik_bruto/$pdb_harga_konstan[$i-1]->produk_domestik_bruto))),2)."%</td></tr>";
+					     			echo "<td>".round(((($pdb_harga_konstan[$i]->produk_domestik_bruto/$pdb_harga_konstan[0]->produk_domestik_bruto)**(1/($pdb_harga_konstan[$i]->tahun-$pdb_harga_konstan[0]->tahun)))-1)*100,2)."%</td></tr>";
 	        				  	}
 	        				  } 
 	        				  ?>
