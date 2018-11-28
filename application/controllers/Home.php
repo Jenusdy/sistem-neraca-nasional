@@ -214,7 +214,7 @@ class Home extends CI_Controller {
 	}
 
 	public function output_pdb_produksi_harga_berlaku(){
-		$header['page'] = 'Output PDB Produksi Harga Berlaku ';
+		$header['page'] = 'Output PDB Produksi Harga Berlaku';
 
 		$data['pdb_harga_berlaku'] = $this->Model_home->get_produksi_pdb_berlaku();
 
@@ -246,7 +246,7 @@ class Home extends CI_Controller {
 
  		$this->load->view('template/header',$header);
 		$this->load->view('template/navbar');
-		$this->load->view('output_pdb_produksi_harga_berlaku');
+		$this->load->view('output_pdb_produksi_harga_berlaku',$data);
 		$this->load->view('template/footer');
 	}
 
