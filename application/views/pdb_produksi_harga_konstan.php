@@ -57,100 +57,102 @@
 	      </table>
 			</div>
 			<div class="grey lighten-4 card-action">
-				<a href="<?php echo base_url('home/output_pdb_produksi_harga_konstan');?>" class="light-green waves-effect waves-light btn"><i class="far fa-newspaper right"></i> Generate Output</a>
-				<a href="<?php echo base_url('home/input_data_pdb_produksi_harga_konstan');?>" class="light-green waves-effect waves-light btn"><i class="fas fa-plus right"></i> Tambah data</a>
+				<a href="<?php echo base_url('home/output_pdb_produksi_harga_konstan');?>" class="light-green waves-effect waves-light btn"><i class="far fa-newspaper right"></i>Generate Output</a>
+				<a href="<?php echo base_url('home/input_data_pdb_produksi_harga_konstan');?>" class="light-green waves-effect waves-light btn"><i class="fas fa-plus right"></i>Tambah data</a>
+				<a href="#modal_keterangan" class="modal-trigger right light-green waves-effect waves-light btn"><i class="fas fa-info-circle right"></i>Keterangan</a>
 			</div>
 		</div>
 	</div>
-	<div class="col s12">
-		<div class="card white">
-			<div class="card-content">
-				<span class="card-title light-green-text text-darken-3"><i class="fas fa-info-circle"></i> Keterangan</span>
-				<hr>
-				<table class="striped">
-					<thead>
-						<tr>
-								<th>Kode</th>
-								<th>Deskripsi</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>A</td>
-							<td>Pertanian, Kehutanan, dan Perikanan</td>
-						</tr>
-						<tr>
-							<td>B</td>
-							<td>Pertambangan dan Penggalian</td>
-						</tr>
-						<tr>
-							<td>C</td>
-							<td>Industri Pengolahan</td>
-						</tr>
-						<tr>
-							<td>D</td>
-							<td>Pengadaan Listrik dan Gas</td>
-						</tr>
-						<tr>
-							<td>E</td>
-							<td>Pengadaan Air, Pengelolaan Sampah, Limbah dan Daur Ulang</td>
-						</tr>
-						<tr>
-							<td>F</td>
-							<td>Konstruksi</td>
-						</tr>
-						<tr>
-							<td>G</td>
-							<td>Perdagangan Besar dan Eceran; Reparasi Mobil dan Sepeda Motor</td>
-						</tr>
-						<tr>
-							<td>H</td>
-							<td>Transportasi dan Pergudangan</td>
-						</tr>
-						<tr>
-							<td>I</td>
-							<td>Penyediaan Akomodasi dan Makan Minum</td>
-						</tr>
-						<tr>
-							<td>J</td>
-							<td>Informasi dan Komunikasi</td>
-						</tr>
-						<tr>
-							<td>K</td>
-							<td>Jasa Keuangan dan Asuransi</td>
-						</tr>
-						<tr>
-							<td>L</td>
-							<td>Real Estat</td>
-						</tr>
-						<tr>
-							<td>M,N</td>
-							<td>Jasa Perusahaan</td>
-						</tr>
-						<tr>
-							<td>O</td>
-							<td>Administrasi Pemerintahan, Pertahanan, dan Jaminan Sosial Wajib</td>
-						</tr>
-						<tr>
-							<td>P</td>
-							<td>Jasa Pendidikan</td>
-						</tr>
-						<tr>
-							<td>Q</td>
-							<td>Jasa Kesehatan dan Kegiatan Sosial</td>
-						</tr>
-						<tr>
-							<td>R,S,T,U</td>
-							<td>Jasa Lainnya</td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
+	<div id="modal_keterangan" class="modal modal-fixed-footer">
+		<div class="modal-content">
+			<h4 class="light-green-text text-darken-3"><i class="fas fa-info-circle"></i> Keterangan</h4>
+			<table class="striped">
+				<thead>
+					<tr>
+							<th>Kode</th>
+							<th>Kegiatan Ekonomi</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>A</td>
+						<td>Pertanian, Kehutanan, dan Perikanan</td>
+					</tr>
+					<tr>
+						<td>B</td>
+						<td>Pertambangan dan Penggalian</td>
+					</tr>
+					<tr>
+						<td>C</td>
+						<td>Industri Pengolahan</td>
+					</tr>
+					<tr>
+						<td>D</td>
+						<td>Pengadaan Listrik dan Gas</td>
+					</tr>
+					<tr>
+						<td>E</td>
+						<td>Pengadaan Air, Pengelolaan Sampah, Limbah dan Daur Ulang</td>
+					</tr>
+					<tr>
+						<td>F</td>
+						<td>Konstruksi</td>
+					</tr>
+					<tr>
+						<td>G</td>
+						<td>Perdagangan Besar dan Eceran; Reparasi Mobil dan Sepeda Motor</td>
+					</tr>
+					<tr>
+						<td>H</td>
+						<td>Transportasi dan Pergudangan</td>
+					</tr>
+					<tr>
+						<td>I</td>
+						<td>Penyediaan Akomodasi dan Makan Minum</td>
+					</tr>
+					<tr>
+						<td>J</td>
+						<td>Informasi dan Komunikasi</td>
+					</tr>
+					<tr>
+						<td>K</td>
+						<td>Jasa Keuangan dan Asuransi</td>
+					</tr>
+					<tr>
+						<td>L</td>
+						<td>Real Estat</td>
+					</tr>
+					<tr>
+						<td>M,N</td>
+						<td>Jasa Perusahaan</td>
+					</tr>
+					<tr>
+						<td>O</td>
+						<td>Administrasi Pemerintahan, Pertahanan, dan Jaminan Sosial Wajib</td>
+					</tr>
+					<tr>
+						<td>P</td>
+						<td>Jasa Pendidikan</td>
+					</tr>
+					<tr>
+						<td>Q</td>
+						<td>Jasa Kesehatan dan Kegiatan Sosial</td>
+					</tr>
+					<tr>
+						<td>R,S,T,U</td>
+						<td>Jasa Lainnya</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="modal-footer">
+			<a href="#!" class="modal-close waves-effect waves-white red btn">Tutup</a>
 		</div>
 	</div>
 </div>
 <script type="text/javascript">
 	$(document).ready(function() {
+		$('.modal').modal();
 		$('#pdb-table').DataTable( {
 			"scrollX": true,
 			"ordering": false,
