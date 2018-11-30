@@ -8,28 +8,42 @@
 					<table id="pdb-table" class="display nowrap center" style="widtd:100%">
 				        <tbody>
 				        	<tr>
+				        		<td>PDB harga konstan</td>
+				        		<td><?php echo round($perkiraan_pdb_tahun_ke_n,2); ?> Miliar</td>
+				        	</tr>
+				        	<tr>
+				        		<td>PDB harga berlaku</td>
+				        		<td><?php echo round($perkiraan_pdb_tahun_ke_inflasi,2); ?> Miliar</td>
+				        	</tr>
+
+				        	<tr>
 				        		<td>Delta PDB</td>
-				        		<td><?php echo $delta_produk_domestik_bruto; ?></td>
+				        		<td><?php echo round($delta_produk_domestik_bruto,2); ?> Miliar</td>
 				        	</tr>
 				        	<tr>
 				        		<td>ICOR</td>
-				        		<td><?php echo $pembentukan_modal_tetap_bruto/$nilai_tambah_pdb; ?></td>
+				        		<td><?php echo round($pembentukan_modal_tetap_bruto/$nilai_tambah_pdb,2); ?></td>
 				        	</tr>
 				        	<tr>
 				        		<td>Investasi (Harga Konstan)</td>
-				        		<td><?php echo $delta_produk_domestik_bruto*$pembentukan_modal_tetap_bruto/$nilai_tambah_pdb; ?></td>
+				        		<td><?php echo round($delta_produk_domestik_bruto*$pembentukan_modal_tetap_bruto/$nilai_tambah_pdb,2); ?> Miliar</td>
 				        	</tr>
 				        	<tr>
-				        		<td>IPI tanpa inflasi</td>
-				        		<td><?php echo $implicit_price_index; ?></td>
+				        		<td>IPI </td>
+				        		<td><?php echo round($implicit_price_index,2); ?></td>
 				        	</tr>
 				        	<tr>
-				        		<td>IPI dengan pengaruh inflasi</td>
-				        		<td><?php echo $implicit_price_index_inflasi; ?></td>
+				        		<td>IPI dikali inflasi</td>
+				        		<td><?php echo round($implicit_price_index_inflasi,3); ?></td>
 				        	</tr>
 				        	<tr>
 				        		<td>Investasi (Harga Berlaku)</td>
-				        		<td><?php echo $delta_produk_domestik_bruto*$pembentukan_modal_tetap_bruto/$nilai_tambah_pdb*$implicit_price_index_inflasi; ?></td>
+				        		<td><?php echo round($delta_produk_domestik_bruto*$pembentukan_modal_tetap_bruto/$nilai_tambah_pdb*$implicit_price_index_inflasi,2); ?> Miliar</td>
+				        	</tr>
+
+				        	<tr>
+				        		<td>Persentase investasi terhadap PDB berlaku</td>
+				        		<td><?php echo round(($delta_produk_domestik_bruto*$pembentukan_modal_tetap_bruto/$nilai_tambah_pdb*$implicit_price_index_inflasi)/$perkiraan_pdb_tahun_ke_inflasi,2)*100; ?>%</td>
 				        	</tr>
 				        </tbody>
 				    </table>

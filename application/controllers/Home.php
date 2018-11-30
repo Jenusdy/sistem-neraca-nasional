@@ -366,6 +366,7 @@ class Home extends CI_Controller {
 		$data['implicit_price_index'] = $last_element_produksi_harga_berlaku->produk_domestik_bruto/$last_element_produksi_harga_konstan->produk_domestik_bruto;
 		$data['implicit_price_index_inflasi'] = $data['implicit_price_index']*(100+$this->input->post('inflasi'))/100;
 		$data['perkiraan_pdb_tahun_ke_n'] = $last_element->produk_domestik_bruto*(100+$this->input->post('persentase_pdb'))/100;
+		$data['perkiraan_pdb_tahun_ke_inflasi'] = $data['perkiraan_pdb_tahun_ke_n']*(100+$this->input->post('inflasi'))/100;
 		$data['pembentukan_modal_tetap_bruto'] = $pembentukan_modal_tetap_bruto;
 		$data['nilai_tambah_pdb'] = $nilai_tambah_pdb;
 		$data['delta_produk_domestik_bruto'] = $data['perkiraan_pdb_tahun_ke_n']-$last_element->produk_domestik_bruto;
