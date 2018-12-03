@@ -37,8 +37,18 @@ $ git clone https://github.com/Jenusdy/sistem-neraca-nasional.git
 
 * **4 Kompotasi Statistik 1 - 2018**
 
-## Special Thanks to
+## Need to improve
+1. Estimasi
+2. Datanya bisa dicetak ( ada judul tabel, bentuknya yang bagus)
+3. Edit data
+4. Analisis data
+5. Waktu dicetak, harga berlaku dulu baru harga konstan
+6. Grafik dicetak dengan fokus tertentu
+7. Grafik pdb harga berlaku dan konstan digabung
+8. Lagnya bisa diatur/ diinput
 
+## Special Thanks to
+* Komputasi 57
 * Kelompok 4
 * Kelompok 5
 * IGP Oka Widhyartha & Satria Bagus Panuntun
